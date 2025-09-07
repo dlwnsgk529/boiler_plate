@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // schema 생성
-const userSchema = mongoose.schema({
+const userSchema = mongoose.Schema({
 	name: {
 		type: String,
 		maxlength: 50
