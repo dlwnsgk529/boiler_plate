@@ -29,6 +29,8 @@ app.post('/register', (req,res) => {
 	// body-parser를 이용해서 req.body에 client에서 보내는 정보를 보관 가능
 	const user = new User(req.body)
 	
+	
+	
 	// mongodb의 method, 정보들이 user model에 저장
 	user.save()
         .then((userInfo) => res.status(200).json({ success: true }))
@@ -42,5 +44,3 @@ app.post('/register', (req,res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-
-// hi
