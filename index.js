@@ -11,13 +11,14 @@ app.use(express.json())
 // 강의와 다른 점, express는 이제 bodyparser가 포함되어있어 굳이 다운하거나 bodyparser에서 위 두개를 안 가져와도 됨
 
 
+const config = require('./config/key')
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://jackpot03529:jackpot2003529@boilerplate.jj2c6mh.mongodb.net/?retryWrites=true&w=majority&appName=boilerplate')
+mongoose.connect(config.mongoURI)
 	.then( () => console.log('MongoDB Connected...') )
 	.catch(err=> console.log(err))
 
-app.get('/', (req, res) => {  res.send('Hello World!~dkssdfse안녕하세요')})
+app.get('/', (req, res) => {  res.send('Hello World!~')})
 
 
 
